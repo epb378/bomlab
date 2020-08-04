@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <title>Edit Team Members</title>
+    </head>
+    <body>
+        <h1>Edit Team</h1>
+        <div>
+            <form action="" method="post" name="teamform">
+                {{ teamform.hidden_tag() }}
+                Team Title: {{ teamform.title }}<br>
+                <div>
+                    <table>
+                        <tr>
+                            <th> Sample Number </th>
+                            <th> x1 </th>
+                            <th> x2 </th>
+                            <th> x3 </th>
+                            <th> Optimiser Score </th>
+                        </tr>
+                        {% for member in teamform.teammembers %}
+                        <tr>
+                            <td>{{ member.samplenum }}</td>
+                            <td>{{ member.x1 }}</td>
+                            <td>{{ member.x2 }}</td>
+                            <td>{{ member.x3 }}</td>
+                            <td>{{ member.optimiser_score }}</td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+                <p><input type="submit" name="edit" value="Send"></p>
+            </form>
+        </div>
+    </body>
+</html>
